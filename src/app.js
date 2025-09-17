@@ -5,26 +5,26 @@ const express = require('express');
 
 const app = express();
 
-app.use('/hello', (req, res) => {
-    res.send('Hello from the server')
+app.get('/abc', (req, res) => {
+    res.send({ firstName: "Naveen", lastName: "Singh" })
 })
 
-app.use('/test', (req, res) => {
-    res.send('Test from the server')
+
+app.post('/user', (req, res) => {
+    res.send("Data was successfully saved in the server")
 })
 
-app.use('/', (req, res) => {
-    res.send('Home page from the server')
+app.delete('/user', (req, res) => {
+    res.send('User was successfully deleted')
+})
+
+app.use('/user', (req, res) => {
+    res.send("Hello from the server")
 })
 
 
 app.listen(3000, () => {
     console.log('Server is successfully listening on port 3000')
 })
-
-
-
-
-
 
 
